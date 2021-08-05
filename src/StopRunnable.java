@@ -1,4 +1,5 @@
-public class StopRunnable implements Runnable{
+public class StopRunnable extends Thread{
+
     private boolean stopRequested = false;
     public synchronized void requestStop(){
         this.stopRequested = true;
@@ -6,7 +7,7 @@ public class StopRunnable implements Runnable{
     public synchronized boolean isStopRequested(){
         return this.stopRequested;
     }
-    private void sleep(long millis){
+    public static void sleep(long millis){
         try {
             Thread.sleep(millis);
         } catch (InterruptedException e) {

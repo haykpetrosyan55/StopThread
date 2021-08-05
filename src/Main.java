@@ -3,8 +3,9 @@ public class Main {
     public static void main(String[] args) {
 
         StopRunnable stopRunnable = new StopRunnable();
-        Thread thread = new Thread(stopRunnable,"myThread");
-        thread.start();
+        stopRunnable.start();
+//        Thread thread = new Thread(stopRunnable,"myThread");
+//        thread.start();
         try {
             System.out.println("Thread is sleep 5000ms");
             Thread.sleep(5000);
